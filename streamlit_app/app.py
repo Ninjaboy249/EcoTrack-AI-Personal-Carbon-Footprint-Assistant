@@ -42,23 +42,43 @@ def local_css():
     st.markdown(
         f"""
         <style>
-        .stApp {{
-            background-image: url('data:image/png;base64,{get_bg_base64()}');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        html, body, .stApp, .block-container, .main {{
+            font-family: 'Inter', sans-serif !important;
+            color: #e6eef3;
         }}
+        /* background with darker overlay and blend for visibility */
+        body {{
+            background-image: linear-gradient(rgba(3,7,11,0.72), rgba(3,7,11,0.72)), url('data:image/png;base64,{get_bg_base64()}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }}
+        /* make Streamlit page container transparent so background shows through */
+        .block-container {{
+            background: rgba(0,0,0,0.12) !important;
+            backdrop-filter: blur(6px) saturate(120%);
+            border-radius: 12px;
+            padding: 1.25rem !important;
+        }}
+        /* card-like sections */
         .card {{
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.06) !important;
             padding: 16px;
             border-radius: 12px;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+            color: #f8fafc;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }}
-        .glow-text {{
-            color: #fff;
-            text-shadow: 0 0 8px rgba(255,255,255,0.8);
+        /* glow/lighting for headings */
+        .stHeader, h1, h2, .stMarkdown {{
+            color: #ffffff !important;
+            text-shadow: 0 2px 16px rgba(60,200,120,0.09), 0 1px 6px rgba(0,0,0,0.6);
         }}
+        /* slider handle color (works for modern browsers) */
+        input[type="range"]::-webkit-slider-thumb {{ background: #ff4d4f; }}
+        input[type="range"]::-moz-range-thumb {{ background: #ff4d4f; }}
         </style>
         """,
         unsafe_allow_html=True
