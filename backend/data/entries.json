@@ -1,0 +1,32 @@
+[
+  {
+    "transport": 10,
+    "electricity": 5,
+    "food": 2,
+    "shopping": 1,
+    "totalCO2": 5.2749999999999995,
+    "createdAt": "2026-06-15T11:16:45.643Z",
+    "updatedAt": "2026-06-15T11:16:45.643Z",
+    "_id": "1"
+  },
+  {
+    "transport": 60,
+    "electricity": 6.4,
+    "food": 1.8,
+    "shopping": 1.7,
+    "totalCO2": 16.52,
+    "createdAt": "2026-06-15T11:17:07.014Z",
+    "updatedAt": "2026-06-15T11:17:07.014Z",
+    "_id": "2"
+  },
+  {
+    "transport": 10,
+    "electricity": 5,
+    "food": 2,
+    "shopping": 1,
+    "totalCO2": 5.2749999999999995,
+    "createdAt": "2026-06-15T11:17:33.831Z",
+    "updatedAt": "2026-06-15T11:17:33.831Z",
+    "_id": "3"
+  }
+]
